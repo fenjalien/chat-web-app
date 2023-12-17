@@ -84,7 +84,10 @@ function App() {
           <Divider />
           <ChatInput
             onChange={(m: string) => provider.current?.awareness?.setLocalStateField("inprogress", m)}
-            onSend={(m: string) => provider.current?.document.getArray("messages").insert(0, [{ message: m, id: ID.current, time: Date.now() }])}
+            onSend={(m: string) => {
+              provider.current?.awareness?.setLocalStateField("inprogress", "")
+              provider.current?.document.getArray("messages").insert(0, [{ message: m, id: ID.current, time: Date.now() }])
+            }}
           />
         </Stack>
       </>

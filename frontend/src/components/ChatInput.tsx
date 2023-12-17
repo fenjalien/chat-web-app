@@ -17,7 +17,7 @@ export default function ChatInput({ onChange, onSend }: ChatProps) {
             setMessage("")
         }}>
             <Stack direction="row" justifyContent="center">
-                <Input autoFocus fullWidth placeholder="Message" value={message} onChange={(e) => { setMessage(e.target.value); onChange(message) }} />
+                <Input autoFocus fullWidth placeholder="Message" value={message} onChange={(e) => { setMessage(e.target.value); onChange(e.target.value) }} />
                 <IconButton disabled={!message} type="submit" > <SendIcon /> </IconButton>
             </Stack>
         </form>
