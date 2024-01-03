@@ -7,7 +7,7 @@ interface MessageProps {
     variant: "me" | "you" | "inprogress"
 }
 
-const VARIANTS: any = {
+const VARIANTS = {
     me: {
         color: "neutral",
         variant: "outlined",
@@ -23,7 +23,7 @@ const VARIANTS: any = {
         variant: "soft",
         borderRadius: "1em 1em 1em 0em"
     }
-}
+} as const
 
 export default function MessageDisplay({ name, message, variant = "you", time }: MessageProps) {
     const style = VARIANTS[variant]
